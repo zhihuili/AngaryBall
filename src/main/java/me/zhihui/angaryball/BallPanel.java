@@ -19,17 +19,13 @@ public class BallPanel extends JPanel {
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
-		if (!target.boom(ball.x, ball.y)) {
-			// 设置颜色
-			g.setColor(new Color(255, 100, 100));
-			// 画球
-			g.fillOval(ball.x, ball.y, 31, 31);
+		if (!target.boom(ball.getBirdPoint()[0], ball.getBirdPoint()[1])) {
 
-			g.setColor(new Color(2, 100, 255));
-			g.fillRect(target.x, target.y, 50, 50);
+			g.drawImage(ball.getBallImage(), ball.x, ball.y, null);
+
+			g.drawImage(target.pig, target.x, target.y, null);
 		} else {
-			g.setColor(Color.BLACK);
-			g.drawChars(boomChar, 0, 7, target.x, target.y);
+			g.drawImage(target.hurtPig, target.x, target.y, null);
 		}
 	}
 
@@ -37,11 +33,11 @@ public class BallPanel extends JPanel {
 		for (double i = 0; i < 5000; i++) {
 			ball.calculate(i);
 			repaint();
-			if (target.boom(ball.x, ball.y)) {
+			if (target.boom(ball.getBirdPoint()[0], ball.getBirdPoint()[1])) {
 				break;
 			}
 			try {
-				Thread.sleep(1);
+				Thread.sleep(3);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

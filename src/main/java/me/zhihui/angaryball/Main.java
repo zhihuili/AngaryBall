@@ -1,7 +1,6 @@
 package me.zhihui.angaryball;
 
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 
 public class Main {
 
