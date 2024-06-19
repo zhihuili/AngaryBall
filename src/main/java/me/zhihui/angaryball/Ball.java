@@ -39,6 +39,13 @@ public class Ball {
 		return point;
 	}
 
+	public void initBall(int speedX, int speedY) {
+		startx = x;
+		starty = y;
+		this.speedx = speedX;
+		this.speedy = speedY;
+	}
+
 	BufferedImage getBallImage() {
 		if (imageCounter++ % 30 == 0)
 			imageIndex++;
