@@ -40,6 +40,7 @@ public class BallPanel extends JPanel {
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
+				isRepare = true;
 				ball.x = e.getX();
 				ball.y = e.getY();
 				mouseX = e.getX();
@@ -79,8 +80,9 @@ public class BallPanel extends JPanel {
 	}
 
 	public void start() {
-		for (double i = 0; i < 1000; i++) {
-			ball.calculate(i);
+		int i = 0;// 1/100 millisecond
+		while (ball.x < 2000 && ball.y < 1500 && (ball.x < target.x + 100 || ball.y < target.y + 100)) {
+			ball.calculate(i++);
 			repaint();
 			if (target.boom(ball.getBirdPoint()[0], ball.getBirdPoint()[1])) {
 				break;
