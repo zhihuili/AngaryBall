@@ -12,6 +12,7 @@ public class Main {
 		BallPanel bp = new BallPanel();
 		frame.add(bp);
 		frame.setVisible(true);
+
 		bp.action();
 //		bp.start();
 

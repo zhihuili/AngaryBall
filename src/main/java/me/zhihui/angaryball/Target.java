@@ -6,8 +6,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Target {
-	public int x = 1100;
-	public int y = 200;
+	public int x = 1200;
+	public int y = 600;
 	public BufferedImage pig;
 	public BufferedImage hurtPig;
 
