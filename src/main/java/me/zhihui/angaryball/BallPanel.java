@@ -30,6 +30,7 @@ public class BallPanel extends JPanel {
 		g.drawImage(backGround, 0, 0, null);
 		if (isInit) {
 			initBackGround();
+			g.drawImage(backGround, 0, 0, null);
 			g.drawImage(target.pig, target.x, target.y, null);
 		} else if (isRepare) {
 			g.drawImage(target.pig, target.x, target.y, null);
